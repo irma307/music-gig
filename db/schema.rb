@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_06_18_125007) do
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.text "description"
     t.bigint "user_id"
     t.integer "price"
     t.string "genre"
