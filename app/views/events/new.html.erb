@@ -1,10 +1,6 @@
 <h1> Create Event </h1>
 
-<%= simple_form_for [@artist, @event] do |f| %>
-<%= f.input :name%>
-<%= f.input :type %>
-<%= f.input :location %>
-<%= f.input :date %>
-<%= f.input :description %>
-<%= f.button :submit %>
-<% end %>
+<br>
+<%= render 'form', artist: @artist, event: @event %>
+<br>
+<%= link_to "Back", artist_path(@artist) %>

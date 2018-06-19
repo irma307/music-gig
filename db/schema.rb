@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2018_06_18_125007) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "location"
     t.text "description"
+    t.string "location"
     t.bigint "user_id"
     t.integer "price"
     t.string "genre"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_06_18_125007) do
     t.string "location"
     t.string "status"
     t.date "date"
-    t.string "type"
+    t.string "event_type"
     t.bigint "user_id"
     t.bigint "artist_id"
     t.datetime "created_at", null: false

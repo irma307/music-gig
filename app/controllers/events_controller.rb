@@ -1,5 +1,13 @@
 class EventsController < ApplicationController
 
+
+
+  def show
+    @artist = Artist.find(params[:artist_id])
+    @event = Event.find(params[:id])
+
+  end
+
   def new
     @artist = Artist.find(params[:artist_id])
     @event = Event.new
@@ -9,13 +17,26 @@ class EventsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @event = Event.new(events_params)
     @event.user_id = current_user.id
-    @event.save!
+    @event.artist = @artist
+      if @event.save!
+        redirect_to artist_event_path(@artist, @event)
+      else
+        render :new
+      end
   end
 
   def edit
+    @event = Event.find(params[:id])
   end
 
   def update
+    @event = Event.find(params[:id])
+    @event.update(events_params)
+      if @event.save!
+        redirect_to artist_event_path(@artist, @event)
+      else
+        render :edit
+      end
   end
 
   def destroy
@@ -27,7 +48,7 @@ class EventsController < ApplicationController
 private
 
 def events_params
-  params.require(:event).permit(:name, :description, :location, :status, :date, :type)
+  params.require(:event).permit(:name, :description, :location, :status, :date, :event_type)
 end
 
 end
