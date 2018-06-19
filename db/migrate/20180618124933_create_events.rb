@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :status
       t.date :date
-      t.string :type
+      t.string :event_type
       t.references :user, foreign_key: true
       t.references :artist, foreign_key: true
 
