@@ -1,7 +1,4 @@
 class EventsController < ApplicationController
-
-
-
   def show
     @artist = Artist.find(params[:artist_id])
     @event = Event.find(params[:id])
