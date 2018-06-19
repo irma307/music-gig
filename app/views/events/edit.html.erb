@@ -1,2 +1,8 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<h1>Edit Events </h1>
+
+<br>
+<%= render 'form', artist: @artist, event: @event %>
+<br>
+<%= link_to "Back", artist_event_path(@artist, @event) %>
+
+
