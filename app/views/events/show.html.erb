@@ -1,1 +1,11 @@
-<h1> <%= @event.name %> </h1>
+<h1> Event: <%= @event.name.capitalize %> </h1>
+
+<ul>
+<li> Description: <%= @event.description %> </li>
+<li> Location: <%= @event.location %> </li>
+<li> Date: <%= @event.date %> </li>
+<li> Type: <%= @event.event_type %> </li>
+<li> Status: Pending </li>
+</ul>
+
+<p> <%= link_to "Delete Event", artist_event_path(@artist, @event), method: :delete, data: {confirm: 'Are you sure ?'} %> </p>
