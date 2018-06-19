@@ -1,8 +1,24 @@
 <h1>All artists</h1>
+
+
+<br>
+
+<%= form_tag artists_path, method: :get do %>
+  <%= select_tag "genre", options_for_select(Artist::GENRES) %>
+  <%= submit_tag %>
+<% end %>
+
+<br>
+
+<div id="artists">
 <ul>
 <% @artists.each do | artist | %>
 <li><%= link_to artist.name, artist_path(artist) %> | <%= artist.genre %> | <%= artist.price %> euros </li>
 <% end %>
 </ul>
+</div>
 
 <%= link_to 'Home', root_path %>
+
+
+
