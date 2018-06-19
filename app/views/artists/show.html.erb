@@ -24,5 +24,23 @@
 
 
 <%= link_to 'Back', root_path %> |
+<%= link_to 'Create Event', new_artist_event_path(@artist) %>
 <%= link_to 'Update', edit_artist_path(@artist) %>
+
+
+<div class="wrapper">
+  <div class="box artist_pict">A</div>
+  <div class="box artist_info">
+    <div class="box artist_name"> <%= @artist.name %></div>
+    <div class="box artist_genre"> <%= @artist.genre %></div>
+    <div class="box artist_location"> <%= @artist.location %></div>
+    <div class="box artist_price"> <%= @artist.price %> euros</div>
+  </div>
+  <div class="box artist_agenda">C</div>
+  <div class="box artist_description"> <%= @artist.description %> </div>
+  <div class="box artist_music_link">E</div>
+  <div class="box artist_ranting">
+    <div class="box artist_stars"></div>
+    <div class="box artist_reviews"></div>
+  </div>
 
