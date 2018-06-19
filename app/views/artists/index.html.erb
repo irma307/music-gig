@@ -1,8 +1,21 @@
-<h1>All artists</h1>
-<ul>
-<% @artists.each do | artist | %>
-<li><%= link_to artist.name, artist_path(artist) %> | <%= artist.genre %> | <%= artist.price %> euros </li>
-<% end %>
-</ul>
+<%= render "share/banner" %>
 
-<%= link_to 'Home', root_path %>
+<div class="row">
+  <% @artists.each do | artist | %>
+  <div class="col-xs-12 col-sm-4">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+    </div>
+    <div class="card-category">
+        <%= artist.genre %>
+    </div>
+    <div class="card-description">
+      <h2>
+        <%= link_to artist.name, artist_path(artist) %>
+      </h2>
+        <p><%= artist.price %> euros </p>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <a class="card-link" href="#" ></a>
+    </div>
+  </div>
+ <% end %>
+</div>
