@@ -1,11 +1,16 @@
 class ReviewsController < ApplicationController
   def new
+    @artist = Artist.find(params[:artist_id])
+    @event = Event.find(params[:event_id])
     @review = Review.new
   end
 
   def create
-    @review = Review.new(review_params)
-    if @review.save
+    @artist = Artist.find(params[:artist_id])
+    @event = Event.find(params[:event_id])
+    @review = Review.new
+    @review.event = @event
+    if @review.save!
       redirect_to root_path
     else
       render :new
