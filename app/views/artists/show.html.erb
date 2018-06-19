@@ -4,6 +4,25 @@
 <p>Price: <%= @artist.price %> euros</p>
 <p>Description: <%= @artist.description %></p>
 
+
+<div class="wrapper">
+  <div class="box artist_pict">PICTURE</div>
+  <div class="box artist_info">
+    <div class="box artist_name">NAME ARTIST</div>
+    <div class="box artist_genre"> MUSIC GENRE</div>
+    <div class="box artist_location">LOCATION</div>
+    <div class="box artist_price">PRICE</div>
+  </div>
+  <div class="box artist_agenda">agenda</div>
+  <div class="box artist_description">description</div>
+  <div class="box artist_music_link">Links</div>
+  <div class="box artist_ranting">
+    <div class="box artist_stars">stars</div>
+    <div class="box artist_reviews">reviews</div>
+  </div>
+</div>
+
+
 <%= link_to 'Back', root_path %> |
 <%= link_to 'Update', edit_artist_path(@artist) %>
 
