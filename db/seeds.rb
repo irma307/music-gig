@@ -13,14 +13,13 @@ Event.destroy_all
 Review.destroy_all
 
 
-User.new(email: "irma@irma.com", password: "lewagon")
-User.new(email: "erland.@erland.com", password: "lewagon")
-User.new(email: "francois@francois.com", password: "lewagon")
-User.new(email: "john@john.com", password: "lewagon")
-
+User.create!(email: "irma@irma.com", password: "lewagon")
+User.create!(email: "erland.@erland.com", password: "lewagon")
+User.create!(email: "francois@francois.com", password: "lewagon")
+User.create!(email: "john@john.com", password: "lewagon")
 
 10.times do
-  Artist.new(
+  Artist.create!(
     name: Faker::Name.name,
     description: Faker::Artist.name,
     location: ["Brussels", "Antwerp", "Ghent", "Liege", "Charleroi"].sample,
@@ -31,7 +30,7 @@ User.new(email: "john@john.com", password: "lewagon")
 end
 
 10.times do
-  Event.new(
+  Event.create!(
     name: ["party", "marriage", "baptism", "work event"].sample,
     description: "na",
     location: ["Brussels", "Antwerp", "Ghent", "Liege", "Charleroi"].sample,
@@ -44,7 +43,7 @@ end
 
 10.times do
 
-Review.new(
+Review.create!(
     description: ["Great", "Amazing musician!", "We had the best time"].sample,
     rating: rand(1..5),
     event_id: rand(1..10)
