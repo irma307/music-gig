@@ -3,13 +3,17 @@
 <p>Genre: <%= @artist.genre %></p>
 <p>Price: <%= @artist.price %> euros</p>
 <p>Description: <%= @artist.description %></p>
-<p> <ul>
-Rating: <% @artist.reviews.each do |review| %>
-        <li> <%= review.rating %> </li>
+<p> Average Rating: <%= @average %> </p>
+<p class="btn-primary btn" id="btn"> See all Reviews </p>
+<div class="hide" id="reviews">
+<ul>
+ <% @artist.reviews.each do |review| %>
+        <li> Description: <%= review.description %> </li>
+        <li> Rating: <%= review.rating %> </li>
         <% end %>
 </ul>
-</p>
-<p> Average: <%= @average %> </p>
+</div>
+
 
 
 
