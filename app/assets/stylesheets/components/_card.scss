@@ -5,10 +5,10 @@
   box-shadow: 2px 2px 3px $gray;
   background-size: cover !important;
   background-position: center;
-  color: white;
-  margin-left: 15px;
+  color: $white;
+  margin: 2px;
   margin-top: 10px;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 .card-user {
   position: absolute;
@@ -16,7 +16,7 @@
   top: 20px;
   width: 60px;
   border-radius: 50%;
-  box-shadow: 3px 3px 2px $blue;
+  box-shadow: 0px 0px 1px $light-gray;
 
 }
 .card-category {
@@ -31,6 +31,11 @@
   position: absolute;
   bottom: 2px;
   left: 35px;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  a {
+    color: $white;
+  }
+
 }
 .card-description h2 {
   font-size: 24px;
@@ -43,8 +48,8 @@
 
 .card-price {
   position: absolute;
-  top: 35px;
-  left: 38px;
+  top: 36px;
+  left: 39px;
   font-size: 15px;
 }
 
@@ -55,7 +60,7 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
+  background: $black;
   opacity: 0;
 }
 
