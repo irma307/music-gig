@@ -1,12 +1,27 @@
 
 <div class="wrapper">
-  <div class="box user_pict">PICTURE</div>
-  <div class="box user_info">
-    <div class="box user_name">USER NAME</div>
-    <div class="box artist_location">LOCATION</div>
+  <div class="box user_pict">
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+    <% end %>
+
   </div>
-  <div class="box user_agenda">user agenda</div>
-  <div class="box user_bookings">Event description
+  <div class="box user_info">
+    <div class="box user_name"> <%= @user.email %> </div>
+    <div class="box artist_location"> <%= @user.location %> </div>
+  </div>
+  <div class="box user_agenda">
+    <% @events.each do |event| %>
+      <%= event.date %>
+    <% end %>
+
+  </div>
+  <div class="box user_bookings">
+    <% @events.each do |event| %>
+      <%= event.description %>
+    <% end %>
+
     <div class="box event_description"></div>
     <div class="box artist_card"></div>
   </div>
