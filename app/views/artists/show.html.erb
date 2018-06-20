@@ -3,6 +3,16 @@
 <p>Genre: <%= @artist.genre %></p>
 <p>Price: <%= @artist.price %> euros</p>
 <p>Description: <%= @artist.description %></p>
+<p> <ul>
+Rating: <% @artist.reviews.each do |review| %>
+        <li> <%= review.rating %> </li>
+        <% end %>
+</ul>
+</p>
+<p> Average: <%= @average %> </p>
+
+
+
 
 <%= link_to 'Back', root_path %> |
 <%= link_to 'Create Event', new_artist_event_path(@artist) %>

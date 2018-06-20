@@ -18,6 +18,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @average = @artist.average
   end
 
   def new
