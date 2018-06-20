@@ -14,6 +14,7 @@ class EventsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @event = Event.new(events_params)
     @event.user_id = current_user.id
+    @event.status = "pending"
     @event.artist = @artist
       if @event.save!
         redirect_to artist_event_path(@artist, @event)
@@ -40,6 +41,22 @@ class EventsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @event = Event.find(params[:id])
     @event.destroy
+  end
+
+  def confirm
+    @event = Event.find(params[:event_id])
+    @artist = @event.artist
+    @event.status = "confirmed"
+    @event.save!
+    redirect_to artist_event_path(@artist, @event)
+  end
+
+  def cancel
+    @event = Event.find(params[:event_id])
+    @artist = @event.artist
+    @event.status = "canceled"
+    @event.save!
+    redirect_to artist_event_path(@artist, @event)
   end
 
 private

@@ -9,4 +9,9 @@ Rails.application.routes.draw do
       resources :reviews, only: [ :new, :create, :destroy ]
     end
   end
+
+  resources :events, only: [] do
+    patch '/confirm', to: 'events#confirm'
+    patch '/cancel', to: 'events#cancel'
+  end
 end
