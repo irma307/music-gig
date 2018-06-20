@@ -1,6 +1,8 @@
-<h1>New artist</h1>
+<h1 class="text-center">New artist</h1>
 <h3><%= @artist.name %></h3>
 <br>
-<%= render 'form', artist: @artist %>
+<div class="col-xs-6 col-xs-offset-3">
+  <%= render 'form', artist: @artist %>
+</div>
 <br>
 <%= link_to 'Back', root_path %>
