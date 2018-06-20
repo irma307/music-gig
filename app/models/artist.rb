@@ -11,6 +11,10 @@ class Artist < ApplicationRecord
     self.reviews.each do |review|
       ratings += review.rating
     end
-    average = ratings / self.reviews.count
+    if self.reviews.count == 0
+      average = "No Ratings"
+    else
+      average = ratings / self.reviews.count
+    end
   end
 end
