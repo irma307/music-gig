@@ -29,7 +29,7 @@
 }
 .card-description {
   position: absolute;
-  bottom: 30px;
+  bottom: 2px;
   left: 35px;
 }
 .card-description h2 {
@@ -39,16 +39,15 @@
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
+}
 
 .card-price {
   position: absolute;
-  bottom: 30px;
-  right: 35px;
-  font-size: 8px;
-
+  top: 35px;
+  left: 38px;
+  font-size: 15px;
 }
 
-}
 .card-link {
   position: absolute;
   top: 0;
