@@ -14,6 +14,7 @@ class EventsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @event = Event.new(events_params)
     @event.user_id = current_user.id
+    @event.status = "pending"
     @event.artist = @artist
       if @event.save!
         redirect_to artist_event_path(@artist, @event)
