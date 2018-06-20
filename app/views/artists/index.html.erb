@@ -1,15 +1,16 @@
+<h1>All artists</h1>
+
+<br>
+<%= form_tag artists_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search by Name / Genre / Location"
+  %>
+<% end %>
+<br>
+
 <%= render "share/banner" %>
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="row">
   <% @artists.each do | artist | %>
@@ -35,3 +36,6 @@
   </div>
  <% end %>
 </div>
+
+<%= link_to 'All Artists', artists_path %> |
+<%= link_to 'Home', root_path %>

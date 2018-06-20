@@ -1,6 +1,19 @@
 class ArtistsController < ApplicationController
   def index
-    @artists = Artist.all
+    # if params[:genre].present?
+      # @artists = Artist.where(genre: params[:genre])
+     if params[:query].present?
+         sql_query = " \
+           artists.name @@ :query \
+           OR artists.genre @@ :query \
+           OR artists.location @@ :query \
+        "
+        sql_query += "OR artists.price = #{params[:query].to_i}"
+
+      @artists = Artist.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @artists = Artist.all
+    end
   end
 
   def show
