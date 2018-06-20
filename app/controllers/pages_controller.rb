@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @artists = Artist.last(6)
   end
+
+  def user_profile
+      @user = current_user
+      @events = @user.events
+  end
 end
