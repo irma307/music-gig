@@ -4,5 +4,15 @@
     <div class="banner-content">
       <h1>SOUND-BMB</h1>
       <p>Get to know your artists</p>
+
+<br>
+<%= form_tag artists_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search by Name / Genre / Location"
+  %><input class="btn btn-primary" style="margin: 10px" type="submit" value="Submit">
+<% end %>
+<br>
     </div>
   </div>
