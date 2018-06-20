@@ -1,27 +1,63 @@
-<h1><%= @artist.name %></h1>
-<p>Location: <%= @artist.location %></p>
-<p>Genre: <%= @artist.genre %></p>
-<p>Price: <%= @artist.price %> euros</p>
-<p>Description: <%= @artist.description %></p>
+<div><h1><%= @artist.name %></h1></div>
+
+<div class="wrapper">
+  <div class="box artist_pict">
+  <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+  <img src="" alt="">
+  </div>
+
+
+  <!-- src='https://kitt.lewagon.com/placeholder/users/alex-felix'
+ -->
+  <div class="box artist_info">
+    <div class="box artist_name">
+      <%= @artist.name %>
+    </div>
+    <div class="box artist_genre">
+      <span class="left_info_title"> Genre </span>
+      <span class="artist_details"> <%= @artist.genre %> </span>
+    </div>
+    <div class="box artist_location">
+      <span class="left_info_title"> Location </span>
+      <span class="artist_details"><%= @artist.location %> </span>
+    </div>
+    <div class="box artist_price">
+      <span class="left_info_title"> Price </span>
+      <span class="artist_details"><%= @artist.price %> euros</span>
+
+    </div>
+  </div>
+
+  <div class="box artist_agenda">agenda</div>
+
+
+  <div class="box artist_music_link">
+    <div class="music_links">
+      <a href="#"><i class="fab fa-spotify" style="margin-right: 40px"></i></a>
+      <a href="#"><i class="fab fa-soundcloud"style="margin-right: 40px" ></i></a>
+      <a href="#"><i class="fab fa-itunes" style="margin-right: 40px"></i></a>
+      <a href="#"><i class="fab fa-youtube" style="margin-right: 40px"></i></a>
+      <a href="#"><i class="fab fa-twitter" style="margin-right: 40px"></i></a>
+    </div>
+  </div>
+
+  <div class="box artist_description">
+    <span class="pull-left small"> Descritpion : </span>
+    <span class="artist_details text-center"> <%= @artist.description %> </span>
+  </div>
+
+  <div class="box artist_ranting">
+    <div class="box artist_stars">
+    stars
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </div>
+
+    <div class="box artist_reviews"> Review from user</div>
+  </div>
+</div>
+
 
 <%= link_to 'Back', root_path %> |
 <%= link_to 'Create Event', new_artist_event_path(@artist) %>
 <%= link_to 'Update', edit_artist_path(@artist) %>
-
-
-<div class="wrapper">
-  <div class="box artist_pict">A</div>
-  <div class="box artist_info">
-    <div class="box artist_name"> <%= @artist.name %></div>
-    <div class="box artist_genre"> <%= @artist.genre %></div>
-    <div class="box artist_location"> <%= @artist.location %></div>
-    <div class="box artist_price"> <%= @artist.price %> euros</div>
-  </div>
-  <div class="box artist_agenda">C</div>
-  <div class="box artist_description"> <%= @artist.description %> </div>
-  <div class="box artist_music_link">E</div>
-  <div class="box artist_ranting">
-    <div class="box artist_stars"></div>
-    <div class="box artist_reviews"></div>
-  </div>
 
