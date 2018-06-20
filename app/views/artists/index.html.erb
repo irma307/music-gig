@@ -1,20 +1,36 @@
 <%= render "share/banner" %>
 
+
+
+
+
+
+
+
+
+
+
+
 <div class="row">
   <% @artists.each do | artist | %>
-  <div class="col-xs-12 col-sm-4">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,-2.8), rgba(0,0,0,0.7)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
     </div>
     <div class="card-category">
-        <%= artist.genre %>
+      <%= artist.genre %>
     </div>
     <div class="card-description">
       <h2>
-        <%= link_to artist.name, artist_path(artist) %>
+      <%= link_to artist.name, artist_path(artist) %>
       </h2>
-        <p><%= artist.price %> euros </p>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
+    </div>
+    <div class="card-price">
+      € <%= artist.price %>
+    </div>
+    <div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <a class="card-link" href="#" >
+      </a>
     </div>
   </div>
  <% end %>
