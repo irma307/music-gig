@@ -43,6 +43,22 @@ class EventsController < ApplicationController
     @event.destroy
   end
 
+  def confirm
+    @event = Event.find(params[:event_id])
+    @artist = @event.artist
+    @event.status = "confirmed"
+    @event.save!
+    redirect_to artist_event_path(@artist, @event)
+  end
+
+  def cancel
+    @event = Event.find(params[:event_id])
+    @artist = @event.artist
+    @event.status = "canceled"
+    @event.save!
+    redirect_to artist_event_path(@artist, @event)
+  end
+
 private
 
 def events_params
