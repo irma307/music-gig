@@ -6,6 +6,10 @@ html, body {
 .footer {
   background: #F4F4F4;
   display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   height: 100px;

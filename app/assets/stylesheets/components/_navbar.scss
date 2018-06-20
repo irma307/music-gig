@@ -32,7 +32,7 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0px 20px;
 }
 
 /* Navbar link */
@@ -74,4 +74,8 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.avatar_dropdown-toggle {
+  margin-top: 100px;
 }
