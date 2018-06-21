@@ -1,0 +1,18 @@
+
+<!-- banner -->
+  <div class="banner-artists" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1485579149621-3123dd979885?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bdad9431efc1a4481ac8a264d7c33a61&auto=format&fit=crop&w=1489&q=80');">
+    <div class="banner-content">
+      <h1>SOUND-BMB</h1>
+      <p>Get to know your artists</p>
+<!-- searchbar -->
+<br>
+<%= form_tag artists_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search by Name / Genre / Location"
+  %><input class="btn btn-primary" style="margin: 10px" type="submit" value="Search">
+<% end %>
+<br>
+    </div>
+  </div>
