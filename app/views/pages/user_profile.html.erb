@@ -12,7 +12,10 @@
         <span class="user_details"> <%= @user.email %> </span>
       </div>
 
-      <div class="box user_location"> Location: <%= @user.location %> </div>
+      <div class="box user_location">
+        <span class="left_info_title"> Location: </span>
+        <span class="user_details"> <%= @user.location %> </span>
+      </div>
 
       <div class="box event_description">
         <span class="left_info_title"> Event: </span>
@@ -40,9 +43,35 @@
       </div>
     </div>
   </div>
-    <div class="box artist_card"> ARTIST CARD</div>
+    <div class="box artist_card"> ARTIST CARD
+
+
+
+
+   <div class="product">
+  <div class='product-upvote'>
+    <div class="product-arrow"></div>
+    <div class='product-count'>95</div>
+  </div>
+  <img src="kudoz.jpg" alt="kudoz" class="product-image hidden-xs">
+  <div class='product-body'>
+    <h3>@artist.name</h3>
+    <p>Your artist for you event</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
 
   <%= link_to 'Edit your profile ', edit_user_registration_path, class: "edit_user btn btn-primary" %>
   </div>
+
 </div>
 
