@@ -6,10 +6,6 @@
     <div class="box artist_pict">
       <%= @artist.photo.url.nil? ? image_tag("https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80", class: "avatar-large") : cl_image_tag(@artist.photo, class: "avatar-large") %>
 
-   <!--  <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
-    <img src="" alt=""> -->
-  </div>
-
 
     <!-- src='https://kitt.lewagon.com/placeholder/users/alex-felix'
     -->
@@ -59,20 +55,19 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       </div>
 
-      <button id="myBtn"> See all reviews (<%= @artist.reviews.count %>) </button>
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>
-            <ul>
-             <% @artist.reviews.each do |review| %>
-             <li> Rating: <%= review.rating %> <br> <%= review.description %>  </li>
-             <% end %>
-           </ul>
-         </p>
-       </div>
-     </div>
-   </div>
+    <button id="myBtn"> See all reviews (<%= @artist.reviews.count %>) </button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>
+          <ul>
+           <% @artist.reviews.each do |review| %>
+              <li> Rating: <%= review.rating %> <br> <%= review.description %>  </li>
+           <% end %>
+          </ul>
+        </p>
+      </div>
+    </div>
   </div>
     <div class="box artist-status">
       <span class="pull-left small"> Notification: </span>
@@ -84,7 +79,3 @@
     </div>
   </div>
 </div>
-
-
-
-
