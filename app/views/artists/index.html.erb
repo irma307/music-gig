@@ -4,7 +4,7 @@
   <div class="row">
     <% @artists.each do | artist | %>
     <div class="col-xs-12 col-sm-6 col-lg-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,-2.8), rgba(0,0,0,0.7)), url(<%= artist.photo.url.nil? ? "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80" : cl_image_path(artist.photo) %>);">
+      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,101,150,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= artist.photo.url.nil? ? "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80" : cl_image_path(artist.photo)%>);">
       </div>
       <div class="card-category">
         <%= artist.genre %>
