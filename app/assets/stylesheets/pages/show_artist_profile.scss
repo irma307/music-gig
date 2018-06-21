@@ -2,15 +2,13 @@
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
-  grid-template-rows: 40% 30% 30%;
+  grid-template-rows: 40% 30% 30% 30%;
   color: #444;
   margin: 10px 10px 10px 10px;
   font: $body-font;
 }
 
 .box {
-  // background-color: #F7F7F7;
-  color: black;
   border-radius: 5px;
   padding: 20px;
   font-size: 150%;
@@ -18,7 +16,6 @@
 }
 
 .box .box {
-  background-color: #e5e5e5;
   color: #444;
   padding: 10px 10px 10px 10px;
   height: 50px;
@@ -38,37 +35,42 @@
   grid-row: 1;
   padding: 10px auto;
 
+
     .left_info_title {
       text-decoration: underline;
       font-size: 18px;
       text-align: left;
+
     }
 }
 
-.artist_name {
+.artist-name {
   text-align: center;
+  background-color: #e5e5e5;
 
 }
 
-.artist_genre {
+.artist-genre {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #e5e5e5;
 
 }
 
-.artist_location {
+.artist-location {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #e5e5e5;
 
 }
 
-.artist_price {
+.artist-price {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
+  background-color: #e5e5e5;
 }
 
 .artist_agenda {
@@ -78,15 +80,17 @@
   border-radius: 10px;
 }
 
-.artist_description {
+.artist-description {
   grid-column: 1 / span 6;
   grid-row: 3;
   border: solid 0.5px #ccc;
   border-radius: 10px;
+  background-color: none;
     .pull-left {
       position: relative;
       font-size: 15px;
       top: -10px;
+      text-decoration: underline;
     }
     .artist_details {
       position: relative;
@@ -96,15 +100,29 @@
 
 .artist_ranting {
   grid-column: 7 / span 2;
-  grid-row: 2 / span 2;
+  grid-row: 2 / span 3;
   border: solid 0.5px #ccc;
   border-radius: 10px;
 }
 
 .artist_stars {
-  .checked {
-    color: orange;
+  background-color: #e5e5e5;
+  text-align: center;
+  .pull-left {
+      position: relative;
+      font-size: 15px;
+      top: -10px;
+      text-decoration: underline;
   }
+  .artist_details {
+      position: relative;
+      left: 10px;
+  }
+}
+
+.artist_reviews {
+  text-align: center;
+  background-color: none;
 }
 
 .artist_music_link {
@@ -125,10 +143,34 @@
 width: 230px;
 border-radius: 30%;
 box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-// border: white 1px solid;
+height: 220px;
 }
+
+// .artist_ranting {
+//   display: flex;
+//   justify-content: space-around;
+// }
+
+
 
 .hide {
   display: none;
+}
+
+.artist-status {
+grid-column: 1 / span 6;
+grid-row: 4;
+border: solid 0.5px #ccc;
+border-radius: 10px;
+.pull-left {
+      position: relative;
+      font-size: 15px;
+      top: -10px;
+      text-decoration: underline;
+  }
+  .artist_details {
+      position: relative;
+      left: 10px;
+  }
 }
 
