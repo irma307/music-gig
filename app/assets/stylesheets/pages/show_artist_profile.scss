@@ -118,11 +118,17 @@
       font-size: 15px;
       top: -10px;
       text-decoration: underline;
+
   }
   .artist_details {
       position: relative;
       left: 10px;
   }
+}
+
+.artist_reviews {
+  text-align: center;
+  background-color: none;
 }
 
 .artist_reviews {
