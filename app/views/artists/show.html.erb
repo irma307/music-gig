@@ -59,19 +59,28 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       </div>
 
-      <div class="box artist_reviews">
-
-        <p class="btn-primary btn" id="btn"> See all Reviews </p>
-        <div class="hide" id="reviews">
+    <button id="myBtn"> See all reviews (<%= @artist.reviews.count %>) </button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>
           <ul>
            <% @artist.reviews.each do |review| %>
-           <li> Description: <%= review.description %> </li>
-           <li> Rating: <%= review.rating %> </li>
+              <li> Rating: <%= review.rating %> <br> <%= review.description %>  </li>
            <% end %>
-         </ul>
-       </div>
-     </div>
-   </div>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+<!--     <p class="btn-primary btn" id="btn"> See all Reviews </p>
+ <div class="hide" id="reviews"> -->
+
+
+    </div>
+  </div>
+</div>
+
      <div class="box artist-status">
       <span class="pull-left small"> Notification: </span>
       <span class="artist_details text-center"> <%= @artist.description %> </span>
