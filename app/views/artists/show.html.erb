@@ -5,10 +5,8 @@
   <div class="wrapper">
     <div class="box artist_pict">
       <%= @artist.photo.url.nil? ? image_tag("https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80", class: "avatar-large") : cl_image_tag(@artist.photo, class: "avatar-large") %>
+</div>
 
-   <!--  <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
-    <img src="" alt=""> -->
-  </div>
 
 
     <!-- src='https://kitt.lewagon.com/placeholder/users/alex-felix'
@@ -82,6 +80,7 @@
        </div>
      </div>
    </div>
+
   </div>
     <div class="box artist-status">
       <span class="pull-left small"> Notification: </span>
@@ -93,7 +92,3 @@
     </div>
   </div>
 </div>
-
-
-
-
