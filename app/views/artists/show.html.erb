@@ -1,82 +1,99 @@
-<div><h1><%= @artist.name %></h1></div>
+<div class="container">
 
-<div class="wrapper">
-  <div class="box artist_pict">
-    <%= @artist.photo.url.nil? ? image_tag("https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80", class: "avatar-large") : cl_image_tag(@artist.photo, class: "avatar-large") %>
+  <div><h1><%= @artist.name %></h1></div>
 
- <!--  <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
-  <img src="" alt=""> -->
+  <div class="wrapper">
+    <div class="box artist_pict">
+      <%= @artist.photo.url.nil? ? image_tag("https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80", class: "avatar-large") : cl_image_tag(@artist.photo, class: "avatar-large") %>
+
+   <!--  <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+    <img src="" alt=""> -->
   </div>
 
 
-  <!-- src='https://kitt.lewagon.com/placeholder/users/alex-felix'
- -->
-  <div class="box artist_info">
-    <div class="box artist_name">
-      <%= @artist.name %>
-    </div>
-    <div class="box artist_genre">
-      <span class="left_info_title"> Genre </span>
-      <span class="artist_details"> <%= @artist.genre %> </span>
-    </div>
-    <div class="box artist_location">
-      <span class="left_info_title"> Location </span>
-      <span class="artist_details"><%= @artist.location %> </span>
-    </div>
-    <div class="box artist_price">
-      <span class="left_info_title"> Price </span>
-      <span class="artist_details"><%= @artist.price %> euros</span>
+    <!-- src='https://kitt.lewagon.com/placeholder/users/alex-felix'
+    -->
+    <div class="box artist_info">
+      <div class="box artist-name">
+        <%= @artist.name %>
+      </div>
+      <div class="box artist-genre">
+        <span class="left_info_title"> Genre </span>
+        <span class="artist_details"> <%= @artist.genre %> </span>
+      </div>
+      <div class="box artist-location">
+        <span class="left_info_title"> Location </span>
+        <span class="artist_details"><%= @artist.location %> </span>
+      </div>
+      <div class="box artist-price">
+        <span class="left_info_title"> Price </span>
+        <span class="artist_details"><%= @artist.price %> euros</span>
 
-    </div>
-  </div>
-
-  <div class="box artist_agenda">agenda</div>
-
-
-  <div class="box artist_music_link">
-    <div class="music_links">
-      <a href="#"><i class="fab fa-spotify" style="margin-right: 40px"></i></a>
-      <a href="#"><i class="fab fa-soundcloud"style="margin-right: 40px" ></i></a>
-      <a href="#"><i class="fab fa-itunes" style="margin-right: 40px"></i></a>
-      <a href="#"><i class="fab fa-youtube" style="margin-right: 40px"></i></a>
-      <a href="#"><i class="fab fa-twitter" style="margin-right: 40px"></i></a>
-    </div>
-  </div>
-
-  <div class="box artist_description">
-    <span class="pull-left small"> Descritpion : </span>
-    <span class="artist_details text-center"> <%= @artist.description %> </span>
-  </div>
-
-  <div class="box artist_ranting">
-    <div class="box artist_stars">
-    <p> Average Rating: <%= @average %> </p>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </div>
     </div>
 
-    <div class="box artist_reviews">
+    <div class="box artist_agenda">agenda</div>
 
-    <p class="btn-primary btn" id="btn"> See all Reviews </p>
-     <div class="hide" id="reviews">
-    <ul>
-     <% @artist.reviews.each do |review| %>
-        <li> Description: <%= review.description %> </li>
-        <li> Rating: <%= review.rating %> </li>
-     <% end %>
-    </ul>
+
+    <div class="box artist_music_link">
+      <div class="music_links">
+        <a href="#"><i class="fab fa-spotify" style="margin-right: 40px"></i></a>
+        <a href="#"><i class="fab fa-soundcloud"style="margin-right: 40px" ></i></a>
+        <a href="#"><i class="fab fa-itunes" style="margin-right: 40px"></i></a>
+        <a href="#"><i class="fab fa-youtube" style="margin-right: 40px"></i></a>
+        <a href="#"><i class="fab fa-twitter" style="margin-right: 40px"></i></a>
+      </div>
     </div>
+
+    <div class="box artist-description">
+      <span class="pull-left small"> Descritpion: </span>
+      <span class="artist_details text-center"> <%= @artist.description %> </span>
+    </div>
+
+    <div class="box artist_ranting">
+      <div class="box artist_stars">
+        <span class="pull-left small"> Average Rating: </span>
+        <span class="artist_details text-center"> <%= @average %> </span>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </div>
+
+    <button id="myBtn"> See all reviews (<%= @artist.reviews.count %>) </button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>
+          <ul>
+           <% @artist.reviews.each do |review| %>
+              <li> Rating: <%= review.rating %> <br> <%= review.description %>  </li>
+           <% end %>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+<!--     <p class="btn-primary btn" id="btn"> See all Reviews </p>
+ <div class="hide" id="reviews"> -->
+
 
     </div>
   </div>
 </div>
 
+     <div class="box artist-status">
+      <span class="pull-left small"> Notification: </span>
+      <span class="artist_details text-center"> <%= @artist.description %> </span>
+     </div>
+ </div>
 
 
-<%= link_to 'Back', root_path, class: "btn btn-primary" %>
-<%= link_to 'Create Event', new_artist_event_path(@artist), class: "btn btn-primary" %>
-<%= link_to 'Update', edit_artist_path(@artist), class: "btn btn-primary" %>
 
+ <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+ <%= link_to 'Create Event', new_artist_event_path(@artist), class: "btn btn-primary" %>
+ <%= link_to 'Update', edit_artist_path(@artist), class: "btn btn-primary" %>
+
+</div>
 
 
 
