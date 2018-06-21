@@ -8,6 +8,10 @@
   font: $body-font;
 }
 
+.container {
+  margin-bottom: 40px;
+}
+
 .box {
   border-radius: 5px;
   padding: 20px;
@@ -78,6 +82,7 @@
   grid-row: 1;
   border: solid 0.5px #ccc;
   border-radius: 10px;
+  color: black;
 }
 
 .artist-description {
@@ -85,7 +90,7 @@
   grid-row: 3;
   border: solid 0.5px #ccc;
   border-radius: 10px;
-  background-color: none;
+
     .pull-left {
       position: relative;
       font-size: 15px;
@@ -122,7 +127,6 @@
 
 .artist_reviews {
   text-align: center;
-  background-color: none;
 }
 
 .artist_music_link {

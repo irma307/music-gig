@@ -59,40 +59,30 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       </div>
 
-    <button id="myBtn"> See all reviews (<%= @artist.reviews.count %>) </button>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>
-          <ul>
-           <% @artist.reviews.each do |review| %>
-              <li> Rating: <%= review.rating %> <br> <%= review.description %>  </li>
-           <% end %>
-          </ul>
-        </p>
-      </div>
-    </div>
-
-<!--     <p class="btn-primary btn" id="btn"> See all Reviews </p>
- <div class="hide" id="reviews"> -->
-
-
-    </div>
+      <button id="myBtn"> See all reviews (<%= @artist.reviews.count %>) </button>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>
+            <ul>
+             <% @artist.reviews.each do |review| %>
+             <li> Rating: <%= review.rating %> <br> <%= review.description %>  </li>
+             <% end %>
+           </ul>
+         </p>
+       </div>
+     </div>
+   </div>
   </div>
-</div>
-
-     <div class="box artist-status">
+    <div class="box artist-status">
       <span class="pull-left small"> Notification: </span>
       <span class="artist_details text-center"> <%= @artist.description %> </span>
-     </div>
- </div>
-
-
-
- <%= link_to 'Back', root_path, class: "btn btn-primary" %>
- <%= link_to 'Create Event', new_artist_event_path(@artist), class: "btn btn-primary" %>
- <%= link_to 'Update', edit_artist_path(@artist), class: "btn btn-primary" %>
-
+    </div>
+      <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+      <%= link_to 'Create Event', new_artist_event_path(@artist), class: "btn btn-primary" %>
+      <%= link_to 'Update', edit_artist_path(@artist), class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
 
 
