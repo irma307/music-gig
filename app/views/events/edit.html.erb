@@ -1,8 +1,7 @@
-<h1>Edit Events </h1>
-
-<br>
-<%= render 'form', artist: @artist, event: @event %>
-<br>
-<%= link_to "Back", artist_event_path(@artist, @event) %>
+<div class="col-xs-6 col-xs-offset-3">
+  <h1>Edit events </h1>
+  <%= render 'form', artist: @artist, event: @event %>
+  <%= link_to "Back", artist_event_path(@artist, @event), class: "btn btn-primary" %>
+</div>
 
 
