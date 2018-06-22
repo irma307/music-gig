@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-User.destroy_all
-Artist.destroy_all
-Event.destroy_all
 Review.destroy_all
+Event.destroy_all
+Artist.destroy_all
+User.destroy_all
 
 
 User.create!(email: "irma@irma.com", password: "lewagon", location: ["Brussels", "Antwerp", "Ghent", "Liege", "Charleroi"].sample)
@@ -25,7 +25,7 @@ User.create!(email: "john@john.com", password: "lewagon", location: ["Brussels",
     location: ["Brussels", "Antwerp", "Ghent", "Liege", "Charleroi"].sample,
     price: [50, 100, 200, 400, 500].sample,
     genre: ["rock", "pop", "classical", "rap", "jazz"].sample,
-    user_id: rand(1..4)
+    user: User.all.sample
     )
 end
 
@@ -37,8 +37,8 @@ end
     date: Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today),
     event_type: ["party", "marriage", "baptism", "work event"].sample,
     status: "pending",
-    user_id: rand(1..4),
-    artist_id: rand(1..10)
+    user: User.all.sample,
+    artist: Artist.all.sample
     )
 end
 
