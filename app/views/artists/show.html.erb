@@ -7,8 +7,6 @@
       <%= @artist.photo.url.nil? ? image_tag("https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80", class: "avatar-large") : cl_image_tag(@artist.photo, class: "avatar-large") %>
     </div>
 
-
-
     <!-- src='https://kitt.lewagon.com/placeholder/users/alex-felix'
     -->
     <div class="box artist_info">
@@ -35,11 +33,11 @@
 
     <div class="box artist_music_link">
       <div class="music_links">
-        <a href="#"><i class="fab fa-spotify" style="margin-right: 40px"></i></a>
-        <a href="#"><i class="fab fa-soundcloud"style="margin-right: 40px" ></i></a>
-        <a href="#"><i class="fab fa-itunes" style="margin-right: 40px"></i></a>
-        <a href="#"><i class="fab fa-youtube" style="margin-right: 40px"></i></a>
-        <a href="#"><i class="fab fa-twitter" style="margin-right: 40px"></i></a>
+        <a href="https://www.spotify.com"><i class="fab fa-spotify" style="margin-right: 40px"></i></a>
+        <a href="https://soundcloud.com/"><i class="fab fa-soundcloud"style="margin-right: 40px" ></i></a>
+        <a href="https://www.apple.com/"><i class="fab fa-itunes" style="margin-right: 40px"></i></a>
+        <a href="https://www.youtube.com/"><i class="fab fa-youtube" style="margin-right: 40px"></i></a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter" style="margin-right: 40px"></i></a>
       </div>
     </div>
 
@@ -50,31 +48,53 @@
 
     <div class="box artist_ranting">
       <div class="box artist_stars">
-        <span class="pull-left small"> Average Rating: </span>
-        <span class="artist_details text-center"> <%= @average %> </span>
+        <span class="pull-left small"> </span>
+        <span class="artist_details text-center">
+         <% if @average != "No ratings" %>
+          <% @average.times do %>
+            <i class="fas fa-star"> </i>
+            <% end %>
+          <% end %>
+        </span>
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       </div>
 
-    <button id="myBtn"> See all reviews (<%= @artist.reviews.count %>) </button>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>
-          <ul>
-           <% @artist.reviews.each do |review| %>
-              <li> Rating: <%= review.rating %> <br> <%= review.description %>  </li>
-           <% end %>
-          </ul>
-        </p>
-      </div>
-    </div>
+      <button id="myBtn"> See all reviews (<%= @artist.reviews.count %>) </button>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>
+            <ul>
+             <% @artist.reviews.each do |review| %>
+             <li> <% review.rating.times do %>
+                <i class="fas fa-star"> </i>
+                <% end %>
+              <br>  <%= review.description %> <br> <br></li>
+             <% end %>
+           </ul>
+         </p>
+       </div>
+     </div>
+   </div>
+
   </div>
-    <div class="box artist-status">
-      <span class="pull-left small"> Notification: </span>
-      <span class="artist_details text-center"> <%= @artist.description %> </span>
-    </div>
+
+
+    <% if @artist.user == current_user %>
+      <div class="box artist-status">
+        <div class="pull-left small"> Notification: </div>
+        <div class="artist_details">
+          <ol>
+          <% @events.each do |event| %>
+            <li> <%= link_to event.name, artist_event_path(event) %>, <%= event.location %> – <strong><%= event.status %></strong></li>
+          <% end %>
+          </ol>
+          </div>
+      </div>
+    <% end %>
+
       <%= link_to 'Back', root_path, class: "btn btn-primary" %>
       <%= link_to 'Create Event', new_artist_event_path(@artist), class: "btn btn-primary" %>
       <%= link_to 'Update', edit_artist_path(@artist), class: "btn btn-primary" %>

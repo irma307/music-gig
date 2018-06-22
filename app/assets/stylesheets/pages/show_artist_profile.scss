@@ -181,6 +181,7 @@ height: 220px;
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    font-size: 17px;
 }
 
 .close {
@@ -215,3 +216,12 @@ border-radius: 10px;
   }
 }
 
+.fa-star {
+  color: #FFD700;
+  font-size: 20px;
+  text-shadow: 2px 6px lightgrey;
+}
+
+.modal-content ul {
+  list-style-type: none;
+}

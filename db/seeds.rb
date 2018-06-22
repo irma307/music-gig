@@ -43,7 +43,7 @@ end
 end
 
 Event.all.each do |event|
-  rand(0..15).times do
+  rand(1..15).times do
     Review.create!(
       description: ["This band rocked. Our guests loved them and everyone had a blast. They read the crowd perfectly and got everyone dancing.They were super flexible and easy to work with.", "Great experience and fabulous music!", "I can't believe I am the first review for them on here, though I guess they play lots of other places besides weddings. I also realize that how much your crowd dances does depend a bit on your guests - but we were on the dance floor ALL NIGHT LONG. They read the crowd so well I will never forget. They were super accommodating with our song choices and played a great mix of music - they pulled me up to sing with my bridesmaids and it was SO MUCH FUN!", "Such a fun band and were exactly what we wanted. A wonderful mix of new and oldies music. They new exactly how to read the crowd and played music that everyone enjoyed! Loved them!", "Very professional, affordable and reliable", "Great musicians, fabulous vocals. Get ready to dance. Highly recommend!", "The band was amazing, and they let the funk roll.", "We went back and forth for months on finding a band. We didn't have time to go see any in person but SoundBMB listened to our needs and budget and recommended them. We LOVED them! We had a packed dance floor for the full night and our family and friends are still raving about how great our band was. We were so happy with booked them. Our event was mostly 30 - 60 crowd (we are about 30 ourselves) and everyone had a great time.", "This was my first experience with booking a live band. They were more than accommodating and went above and beyond."].sample,
       rating: rand(3..5),
