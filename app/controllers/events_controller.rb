@@ -48,7 +48,7 @@ class EventsController < ApplicationController
     @artist = @event.artist
     @event.status = "confirmed"
     @event.save!
-    redirect_to artist_event_path(@artist, @event)
+    # redirect_to artist_event_path(@artist, @event)
   end
 
   def cancel
@@ -56,7 +56,7 @@ class EventsController < ApplicationController
     @artist = @event.artist
     @event.status = "canceled"
     @event.save!
-    redirect_to artist_event_path(@artist, @event)
+    # redirect_to artist_event_path(@artist, @event)
   end
 
 private

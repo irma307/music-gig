@@ -80,10 +80,21 @@
    </div>
 
   </div>
-    <div class="box artist-status">
-      <span class="pull-left small"> Notification: </span>
-      <span class="artist_details text-center"> <%= @artist.description %> </span>
-    </div>
+
+
+    <% if @artist.user == current_user %>
+      <div class="box artist-status">
+        <div class="pull-left small"> Notification: </div>
+        <div class="artist_details">
+          <ol>
+          <% @events.each do |event| %>
+            <li> <%= link_to event.name, artist_event_path(event) %>, <%= event.location %> – <strong><%= event.status %></strong></li>
+          <% end %>
+          </ol>
+          </div>
+      </div>
+    <% end %>
+
       <%= link_to 'Back', root_path, class: "btn btn-primary" %>
       <%= link_to 'Create Event', new_artist_event_path(@artist), class: "btn btn-primary" %>
       <%= link_to 'Update', edit_artist_path(@artist), class: "btn btn-primary" %>
