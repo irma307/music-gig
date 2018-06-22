@@ -1,23 +1,46 @@
+<%= render "share/banner_events" %>
 <div class="booking-status-confirmed hide text-center" id="booking-status"><p>This booking is confirmed</p></div>
 <div class="booking-status-canceled hide text-center" id="booking-status"><p>This booking is canceled</p></div>
 
+<div class="flexcontainer" >
+    <!-- artist-card -->
+   <%= link_to artist_path(@artist) do %>
+   <div>
+      <div class="event-card" style="background-image: linear-gradient(rgba(0,0,0,-2.8), rgba(0,0,0,0.7)), url(<%= @artist.photo.url.nil? ? "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80" : cl_image_path(@artist.photo)%>);">
+        </div>
 
-<div class="col-xs-6 col-xs-offset-3">
-  <h1> Event: <%= @event.name.capitalize %> </h1>
 
-  <ul>
-  <li> Description: <%= @event.description %> </li>
-  <li> Location: <%= @event.location %> </li>
-  <li> Date: <%= @event.date %> </li>
-  <li> Type: <%= @event.event_type %> </li>
-  <li> Status: Pending </li>
-  </ul>
+ <div class="event-card-description">
+        <p>
+        <%= link_to @artist.name, artist_path(@artist) %>
+        </p>
+      </div>
+      </div>
 
-  <%= link_to "Delete", artist_event_path(@artist, @event), method: :delete, data: {confirm: 'Are you sure ?'}, class: "btn btn-primary" %>
+    <!-- event-description -->
+    <div style="text-align: center">
+      <h1>
+        <%= @event.name.capitalize %>
+      </h1>
+      <h3>
+        <%= @event.description %>
+      </h3>
+      <ul style="list-style-type: none">
+        <li>Location: <%= @event.location %></li>
+        <li>Date: <%= @event.date %></li>
+        <li>Type: <%= @event.event_type %></li>
+        <li>Status: Pending</li>
 
- <% if @artist.user == current_user %>
+
+    </ul>
+    <!-- buttons -->
+      <%= link_to "Delete", artist_event_path(@artist, @event), method: :delete, data: {confirm: 'Are you sure ?'}, class: "btn btn-primary" %>
+
+     <% if @artist.user == current_user %>
     <%= link_to "Confirm", event_confirm_path(@event), method: :patch, class: "btn btn-primary", id: "confirm" %>
     <%= link_to "Cancel", event_cancel_path(@event), method: :patch, class: "btn btn-primary", id: "cancel"%>
-  <% end %>
-  <%# raise %>
+      <% end %>
+      <%# raise %>
+    </div>
+  </div>
 </div>
