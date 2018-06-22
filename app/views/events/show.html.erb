@@ -1,3 +1,5 @@
+<div class="booking-status text-center" id="booking-status"><p>This booking is confirmed</p></div>
+
 <div class="col-xs-6 col-xs-offset-3">
   <h1> Event: <%= @event.name.capitalize %> </h1>
 
@@ -13,8 +15,8 @@
 
  <% if @event.artist.user == current_user %>
 
-    <%= link_to "Confirm", event_confirm_path(@event), method: :patch, class: "btn btn-primary"%>
-    <%= link_to "Cancel", event_cancel_path(@event), method: :patch, class: "btn btn-primary"%>
+    <%= link_to "Confirm", event_confirm_path(@event), method: :patch, class: "btn btn-primary", id: "confirm" %>
+    <%= link_to "Cancel", event_cancel_path(@event), method: :patch, class: "btn btn-primary", id: "cancel"%>
   <% end %>
   <%# raise %>
 </div>
