@@ -50,22 +50,25 @@
     background-color: #e5e5e5;
     display: flex;
     justify-content: space-evenly;
-    // .pull-left {
-    //   position: relative;
-    //   font-size: 15px;
-    //   top: -10px;
-    //   text-decoration: underline;
-    // }
-    // .user_details {
-    //   position: relative;
-    //   left: 18px;
-    // }
   }
 
   .event_description {
     background-color: #e5e5e5;
     display: flex;
     justify-content: space-evenly;
+    height: 200px;
+    overflow-x: auto;
+
+    .pull-left {
+      position: relative;
+      font-size: 15px;
+      top: -10px;
+      text-decoration: underline;
+    }
+    .user_details {
+      position: relative;
+      left: 18px;
+    }
   }
 }
 
