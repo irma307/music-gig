@@ -36,14 +36,9 @@
         <% @artist = event.artist %>
         <%= event.description %>
           <% if event.status == "confirmed" %>
-            <%= link_to "link button", new_artist_event_review_path(@artist, event), class: "btn btn-primary"%>
+            <%= link_to "Review", new_artist_event_review_path(@artist, event), class: "btn_francois btn-primary"%>
           <% end %>
-
-
-
         <% end %>
-        <ul><div class="btn-primary btn_review">Review
-        </div></ul>
 
       </div>
     </div>
