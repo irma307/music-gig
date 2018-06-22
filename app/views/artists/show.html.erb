@@ -50,7 +50,7 @@
       <div class="box artist_stars">
         <span class="pull-left small"> </span>
         <span class="artist_details text-center">
-         <% if @average != "No ratings" %>
+         <% if @average != "No ratings" || @average.nil? %>
           <% @average.times do %>
             <i class="fas fa-star"> </i>
             <% end %>
@@ -68,11 +68,13 @@
           <p>
             <ul>
              <% @artist.reviews.each do |review| %>
-             <li> <% review.rating.times do %>
-                <i class="fas fa-star"> </i>
-                <% end %>
-              <br>  <%= review.description %> <br> <br></li>
-             <% end %>
+              <% unless review.rating.nil?%>
+                <li> <% review.rating.times do %>
+                  <i class="fas fa-star"> </i>
+                    <% end %>
+              <% end %>
+                <br>  <%= review.description %> <br> <br></li>
+            <% end %>
            </ul>
          </p>
        </div>
