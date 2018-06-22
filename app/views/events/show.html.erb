@@ -1,20 +1,38 @@
-<div class="col-xs-6 col-xs-offset-3">
-  <h1> Event: <%= @event.name.capitalize %> </h1>
+<%= render "share/banner_events" %>
+<div class="container" >
+  <div>
+    <div style="text-align: center">
+      <h1>
+        <%= @event.name.capitalize %>
+      </h1>
+      <h3>
+        <%= @event.description %>
+      </h3>
+      <ul style="list-style-type: none">
+        <li>
+          Location: <%= @event.location %>
+        </li>
 
-  <ul>
-  <li> Description: <%= @event.description %> </li>
-  <li> Location: <%= @event.location %> </li>
-  <li> Date: <%= @event.date %> </li>
-  <li> Type: <%= @event.event_type %> </li>
-  <li> Status: Pending </li>
-  </ul>
+        <li>
+          Date: <%= @event.date %>
+        </li>
 
-  <%= link_to "Delete", artist_event_path(@artist, @event), method: :delete, data: {confirm: 'Are you sure ?'}, class: "btn btn-primary" %>
+        <li>
+          Type: <%= @event.event_type %>
+        </li>
 
- <% if @event.artist.user == current_user %>
+        <li>
+          Status: Pending
+        </li>
+    </ul>
+      <%= link_to "Delete", artist_event_path(@artist, @event), method: :delete, data: {confirm: 'Are you sure ?'}, class: "btn btn-primary" %>
 
-    <%= link_to "Confirm", event_confirm_path(@event), method: :patch, class: "btn btn-primary"%>
-    <%= link_to "Cancel", event_cancel_path(@event), method: :patch, class: "btn btn-primary"%>
-  <% end %>
-  <%# raise %>
+      <% if @event.artist.user == current_user %>
+
+        <%= link_to "Confirm", event_confirm_path(@event), method: :patch, class: "btn btn-primary"%>
+        <%= link_to "Cancel", event_cancel_path(@event), method: :patch, class: "btn btn-info"%>
+      <% end %>
+      <%# raise %>
+    </div>
+  </div>
 </div>
