@@ -4,6 +4,17 @@
       <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
       <img src="" alt="">
 
+      <div class="box user_bookings">
+        <div class="box user_ranting list-inline">
+
+          <ul><div class="btn-primary btn_review">Artist profile</div></ul>
+
+        </div>
+      </div>
+
+
+
+
     </div>
 
     <div class="box user_info">
@@ -12,14 +23,28 @@
         <span class="user_details"> <%= @user.email %> </span>
       </div>
 
-      <div class="box user_location"> Location: <%= @user.location %> </div>
+      <div class="box user_location">
+        <span class="left_info_title"> Location: </span>
+        <span class="user_details"> <%= @user.location %> </span>
+      </div>
 
       <div class="box event_description">
         <span class="left_info_title"> Event: </span>
-        <span class="user_details"> <%= @event_description %> </span>
+       <span class="user_details">
+         <%= @event_description %> </span>
         <% @events.each do |event| %>
+        <% @artist = event.artist %>
         <%= event.description %>
+          <% if event.status == "confirmed" %>
+            <%= link_to "link button", new_artist_event_review_path(@artist, event), class: "btn btn-primary"%>
+          <% end %>
+
+
+
         <% end %>
+        <ul><div class="btn-primary btn_review">Review
+        </div></ul>
+
       </div>
     </div>
 
@@ -30,19 +55,45 @@
     </div>
 
 
-    <div class="box user_bookings">
-      <div class="box user_ranting list-inline">Links
+    <!-- <div class="box user_bookings">
+      WILL THIS STAY HERE?
+      <div class="box user_ranting list-inline">
 
         <ul><div class="btn-primary btn_review">Review</div></ul>
         <ul><div class="btn-primary btn_rating">Rating</div></ul>
 
-        <hr>
       </div>
-    </div>
+    </div> -->
   </div>
-    <div class="box artist_card"> ARTIST CARD</div>
+    <div class="box artist_card"> ARTIST CARD
+
+
+
+
+   <div class="product">
+  <div class='product-upvote'>
+    <div class="product-arrow"></div>
+    <div class='product-count'>95</div>
+  </div>
+  <img src="kudoz.jpg" alt="kudoz" class="product-image hidden-xs">
+  <div class='product-body'>
+    <h3>@artist.name</h3>
+    <p>Your artist for you event</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
 
   <%= link_to 'Edit your profile ', edit_user_registration_path, class: "edit_user btn btn-primary" %>
   </div>
+
 </div>
 

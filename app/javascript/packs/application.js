@@ -1,14 +1,15 @@
 import "bootstrap";
 
-
+import { addConfirmEvents, addCancelEvents  } from '../components/booking_confirm';
 /*let  link = document.querySelector("#btn")
 link.addEventListener('click', (event) => {
   let unhide = document.querySelector("#reviews")
   unhide.classList.toggle("hide")
 })
 */
-
-
+if(document.getElementById('confirm') || document.getElementById('cancel')) {
+addConfirmEvents();
+}
 // Get the modal
 let modal = document.getElementById('myModal');
 // Get the button that opens the modal

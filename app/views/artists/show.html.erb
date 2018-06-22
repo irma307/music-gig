@@ -7,10 +7,6 @@
       <%= @artist.photo.url.nil? ? image_tag("https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80", class: "avatar-large") : cl_image_tag(@artist.photo, class: "avatar-large") %>
     </div>
 
-
-
-
-
     <!-- src='https://kitt.lewagon.com/placeholder/users/alex-felix'
     -->
     <div class="box artist_info">
@@ -84,10 +80,23 @@
    </div>
 
   </div>
-    <div class="box artist-status">
-      <span class="pull-left small"> Notification: </span>
-      <span class="artist_details text-center"> <%= @artist.description %> </span>
-    </div>
+
+
+  <% @events.each do |event| %>
+
+    <% if @artist.user == current_user %>
+      <div class="box artist-status">
+        <div class="pull-left small"> Notification: </div>
+        <div class="artist_details">
+          <ol>
+            <li> <%= link_to event.name, artist_event_path(event) %>, <%= event.location %> – <strong><%= event.status %></strong></li>
+          <% end %>
+          </ol>
+
+          </div>
+      </div>
+    <% end %>
+
       <%= link_to 'Back', root_path, class: "btn btn-primary" %>
       <%= link_to 'Create Event', new_artist_event_path(@artist), class: "btn btn-primary" %>
       <%= link_to 'Update', edit_artist_path(@artist), class: "btn btn-primary" %>
