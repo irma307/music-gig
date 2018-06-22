@@ -14,7 +14,6 @@
 }
 
 .box .box {
-  background-color: #e5e5e5;
   color: #444;
   padding: 10px 10px 10px 10px;
   margin-bottom: 10px;
@@ -29,8 +28,6 @@
   grid-column: 3 / span 4;
   grid-row: 1;
   padding: 10px auto;
-
-
 
   .user_name {
     background-color: #e5e5e5;
@@ -48,11 +45,28 @@
       left: 18px;
     }
   }
-}
 
-.user_location {
-  display: flex;
-  justify-content: space-evenly;
+  .user_location {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: space-evenly;
+    // .pull-left {
+    //   position: relative;
+    //   font-size: 15px;
+    //   top: -10px;
+    //   text-decoration: underline;
+    // }
+    // .user_details {
+    //   position: relative;
+    //   left: 18px;
+    // }
+  }
+
+  .event_description {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
 .user_agenda {
@@ -91,8 +105,4 @@
 
 .btn_rating {
   padding: 5px 10px 5px 10px;
-}
-
-.edit_user {
-  margin-top: 10px;
 }
