@@ -1,5 +1,5 @@
 class Artist < ApplicationRecord
-  has_many :events
+  has_many :events, dependent: :destroy
   has_many :reviews, through: :events
   belongs_to :user
   validates :name, presence: true
