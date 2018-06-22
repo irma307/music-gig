@@ -31,7 +31,7 @@
       <div class="box event_description">
         <span class="left_info_title"> Event: </span>
        <span class="user_details">
-         <%= @event_description %> </span>
+         <%#= @event_description %> </span>
         <% @events.each do |event| %>
         <% @artist = event.artist %>
         <%= event.description %>
@@ -48,10 +48,26 @@
       </div>
     </div>
 
-    <div class="box user_agenda"> AGENDA
-      <% @events.each do |event| %>
-        <%= event.date %>
-      <% end %>
+    <div class="box user_agenda">
+      <%# @events.each do |event| %>
+        <%#= event.date %>
+      <%# end %>
+
+      <figure>
+        <header>
+         <script>
+            var day = new Date().getDay();
+              week = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+
+            document.write(week[day]);
+          </script>
+        </header>
+        <section>
+          <script>
+            document.write(new Date().getDate());
+          </script>
+        </section>
+      </figure>
     </div>
 
 
@@ -65,35 +81,26 @@
       </div>
     </div> -->
   </div>
-    <div class="box artist_card"> ARTIST CARD
+    <div class="box artist_card">
 
+      <span class="left_info_title">
+        Your artist for you event
 
-
-
-   <div class="product">
-  <div class='product-upvote'>
-    <div class="product-arrow"></div>
-    <div class='product-count'>95</div>
-  </div>
-  <img src="kudoz.jpg" alt="kudoz" class="product-image hidden-xs">
-  <div class='product-body'>
-    <h3>@artist.name</h3>
-    <p>Your artist for you event</p>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
+      </span>
+        <span class="user_details">
+        <div class="box artist_pict_user">
+        <%= link_to artist_path(@artist) do %>
+        <%= @artist.photo.url.nil? ? image_tag("https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&s=c3ca870aabdda474d2179770e70d356e&auto=format&fit=crop&w=1950&q=80", class: "avatar") : cl_image_tag(@artist.photo, class: "avatar") %>
+      </div>
+        <% end %>
     </div>
+        </span>
 
-  <%= link_to 'Edit your profile ', edit_user_registration_path, class: "edit_user btn btn-primary" %>
+
   </div>
-
+    <div class="container">
+  <%= link_to 'Edit your profile ', edit_user_registration_path, class: "edit_user btn btn-primary" %>
+    </div>
+  </div>
 </div>
 
