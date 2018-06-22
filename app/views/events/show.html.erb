@@ -15,8 +15,7 @@
 
   <%= link_to "Delete", artist_event_path(@artist, @event), method: :delete, data: {confirm: 'Are you sure ?'}, class: "btn btn-primary" %>
 
- <% if @event.artist.user == current_user %>
-
+ <% if @artist.user == current_user %>
     <%= link_to "Confirm", event_confirm_path(@event), method: :patch, class: "btn btn-primary", id: "confirm" %>
     <%= link_to "Cancel", event_cancel_path(@event), method: :patch, class: "btn btn-primary", id: "cancel"%>
   <% end %>

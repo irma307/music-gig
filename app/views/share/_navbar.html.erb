@@ -23,7 +23,7 @@
 
   <% if user_signed_in? %>
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to 'Book an artist', artists_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to 'Find an artist', artists_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to 'Become an artist', new_artist_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to 'Your profile', user_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
