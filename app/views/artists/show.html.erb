@@ -82,15 +82,17 @@
   </div>
 
 
+  <% @events.each do |event| %>
+
     <% if @artist.user == current_user %>
       <div class="box artist-status">
         <div class="pull-left small"> Notification: </div>
         <div class="artist_details">
           <ol>
-          <% @events.each do |event| %>
             <li> <%= link_to event.name, artist_event_path(event) %>, <%= event.location %> – <strong><%= event.status %></strong></li>
           <% end %>
           </ol>
+
           </div>
       </div>
     <% end %>
