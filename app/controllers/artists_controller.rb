@@ -19,6 +19,7 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
     @average = @artist.average
+    @events = Event.where(id: @artist.id)
   end
 
   def new

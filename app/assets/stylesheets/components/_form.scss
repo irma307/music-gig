@@ -1,0 +1,25 @@
+.booking-status-canceled {
+  width: 100%;
+  color: white;
+  background-color: grey;
+  font-style: italic;
+}
+
+.booking-status-confirmed {
+  width: 100%;
+  color: white;
+  background-color: grey;
+  font-style: italic;
+}
+
+.confirmed {
+  background-color: green;
+}
+
+.canceled {
+  background-color: red;
+}
+
+.hide {
+  display: none;
+}

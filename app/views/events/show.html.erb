@@ -1,4 +1,7 @@
 <%= render "share/banner_events" %>
+<div class="booking-status-confirmed hide text-center" id="booking-status"><p>This booking is confirmed</p></div>
+<div class="booking-status-canceled hide text-center" id="booking-status"><p>This booking is canceled</p></div>
+
 <div class="flexcontainer" >
     <!-- artist-card -->
    <%= link_to artist_path(@artist) do %>
@@ -13,8 +16,6 @@
         </p>
       </div>
       </div>
-
-  <% end %>
 
     <!-- event-description -->
     <div style="text-align: center">
@@ -35,10 +36,9 @@
     <!-- buttons -->
       <%= link_to "Delete", artist_event_path(@artist, @event), method: :delete, data: {confirm: 'Are you sure ?'}, class: "btn btn-primary" %>
 
-      <% if @event.artist.user == current_user %>
-
-        <%= link_to "Confirm", event_confirm_path(@event), method: :patch, class: "btn btn-primary"%>
-        <%= link_to "Cancel", event_cancel_path(@event), method: :patch, class: "btn btn-info"%>
+     <% if @artist.user == current_user %>
+    <%= link_to "Confirm", event_confirm_path(@event), method: :patch, class: "btn btn-primary", id: "confirm" %>
+    <%= link_to "Cancel", event_cancel_path(@event), method: :patch, class: "btn btn-primary", id: "cancel"%>
       <% end %>
       <%# raise %>
     </div>
